@@ -2,5 +2,6 @@
   "name": "Default",
   "repositoryDependencies": [
     "github.com/shashank-sn/skills"
-  ]
+  ],
+  "install": "git clone --depth 1 --branch initial https://github.com/shashank-sn/skills.git /tmp/cursor-skills-sync && mkdir -p .agents/skills && (command -v rsync >/dev/null && rsync -a /tmp/cursor-skills-sync/.agents/skills/ .agents/skills/ || cp -R /tmp/cursor-skills-sync/.agents/skills/. .agents/skills/)"
 }
