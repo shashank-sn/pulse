@@ -1,7 +1,7 @@
 {
   "name": "Default",
   "repositoryDependencies": [
-    "github.com/shashank-sn/skills"
+    "github.com/shashank-sn/skills-taste"
   ],
-  "install": "git clone --depth 1 --branch initial https://github.com/shashank-sn/skills.git /tmp/cursor-skills-sync && mkdir -p .agents/skills && (command -v rsync >/dev/null && rsync -a /tmp/cursor-skills-sync/.agents/skills/ .agents/skills/ || cp -R /tmp/cursor-skills-sync/.agents/skills/. .agents/skills/)"
+  "install": "git clone --depth 1 --branch initial https://github.com/shashank-sn/skills-taste.git /tmp/cursor-skills-sync || git clone --depth 1 --branch initial https://github.com/shashank-sn/skills.git /tmp/cursor-skills-sync && mkdir -p .agents/skills .agents/taste .cursor/rules/imported/taste && (command -v rsync >/dev/null && rsync -a /tmp/cursor-skills-sync/.agents/skills/ .agents/skills/ && rsync -a /tmp/cursor-skills-sync/.agents/taste/ .agents/taste/ && rsync -a /tmp/cursor-skills-sync/.cursor/rules/imported/taste/ .cursor/rules/imported/taste/ || (cp -R /tmp/cursor-skills-sync/.agents/skills/. .agents/skills/ && cp -R /tmp/cursor-skills-sync/.agents/taste/. .agents/taste/ && cp -R /tmp/cursor-skills-sync/.cursor/rules/imported/taste/. .cursor/rules/imported/taste/)) && curl -fsSL https://raw.githubusercontent.com/shashank-sn/skills-taste/initial/scripts/bin/cursor-cloud-shell-bootstrap.sh -o /tmp/cursor-cloud-shell-bootstrap.sh 2>/dev/null && bash /tmp/cursor-cloud-shell-bootstrap.sh || true && git clone --depth 1 --branch initial https://github.com/shashank-sn/skills.git /tmp/cursor-skills-sync && mkdir -p .agents/skills && (command -v rsync >/dev/null && rsync -a /tmp/cursor-skills-sync/.agents/skills/ .agents/skills/ || cp -R /tmp/cursor-skills-sync/.agents/skills/. .agents/skills/)"
 }
